@@ -31,12 +31,11 @@ def get_cheapest_hotel(number):   #DO NOT change the function's name
         staying_weekdays.append(date.split('(')[1][0:-1])
 
     #Logic
-    
     cheapest_hotel = ''
     cheapest_value = Infinity
-    for hotel in hotels:
+    for hotel in hotels:    #Discover hotel with cheapest summed day costs.
         value = 0
-        for staying_weekday in staying_weekdays:
+        for staying_weekday in staying_weekdays: #Discover summed day costs (total booking price)
             if(staying_weekday in workdays):
                 value = value + hotel_prices[hotel]['workdays'][client_type]
             elif(staying_weekday in weekend):
