@@ -14,12 +14,12 @@ def get_cheapest_hotel(number):   #DO NOT change the function's name
     if (isinstance(number, str)):
         str_input = number
     else: 
-        return "Inappropriate input"
+        return "Inappropriate input. Please, insert a string. Format expected: <client_type>: <date1>, <date2>, <date3>, ..."
     
     #Getting client type from input
     client_type = str_input.split(': ')[0]
     if(client_type not in client_types):
-        return "Inappropriate input"
+        return "Inappropriate client type inserted. Please, insert 'Regular' or 'Rewards'. Format expected: <client_type>: <date1>, <date2>, <date3>, ..."
     
     #Getting whole dates from input
     staying_dates = str_input.split(': ')[1]
@@ -42,13 +42,11 @@ def get_cheapest_hotel(number):   #DO NOT change the function's name
             elif(staying_weekday in weekend):
                 value = value + hotel_prices[hotel]['weekend'][client_type]
             else:
-                return "Inappropriate input"
+                return "Inappropriate weekday inserted. Please insert one of the following: 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'. Format expected: <client_type>: <date1>, <date2>, <date3>, ..."
         if(value < cheapest_value):
             cheapest_value = value
             cheapest_hotel = hotel
         elif(value == cheapest_value and hotel_ratings[hotel] > hotel_ratings[cheapest_hotel]):
             cheapest_hotel = hotel
-
-    print(cheapest_value)
 
     return cheapest_hotel
