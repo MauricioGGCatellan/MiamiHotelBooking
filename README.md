@@ -1,4 +1,4 @@
-Nearly empty Python3 project with a failing test!
+Python3 Miami Hotels project with tests!
 ===
 
 **DO NOT change the names of the function (get_cheapest_hotel) or of the file and folder it is in, changing it implies in disqualification.** 
@@ -16,7 +16,7 @@ $ pip3 install -r requirements.txt
 ```
 
 
-To run the (failing) test:
+To run the test:
 
 ```
 $ py.test
